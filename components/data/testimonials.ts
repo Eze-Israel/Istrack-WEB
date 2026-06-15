@@ -1,25 +1,25 @@
 export const testimonials = [
   {
-    name: "Mrs. Deborah Johnson",
-    role: "Principal",
-    school: "Faith Academy",
-    quote:
-      "ISTRACK transformed how we manage attendance and student records. Everything is now centralized.",
+    initials: "MO",
+    name: "Mrs. Miriam Okafor",
+    role: "Principal, Olivet Academy Enugu",
+    text: "ISTRACK has saved us hours of manual work every week. Result computation that used to take 3 teachers 5 days now happens in under an hour with zero errors.",
+    color: "bg-orange-500",
   },
 
   {
-    name: "Mr. Michael Eze",
-    role: "Administrator",
-    school: "Victory High School",
-    quote:
-      "The reporting system alone saves us countless hours every term.",
+    initials: "JA",
+    name: "Mr. James Adekunle",
+    role: "Director, Royal Excel Academy Kano",
+    text: "Parents are incredibly happy. They can check their child's attendance and results from their phone at any time. We've had fewer calls to the school office and more trust from our community.",
+    color: "bg-blue-500",
   },
 
   {
-    name: "Mrs. Grace Okafor",
-    role: "School Owner",
-    school: "Royal Crest Academy",
-    quote:
-      "Parents love the communication tools. Engagement has improved dramatically.",
+    initials: "FN",
+    name: "Mrs. Funmi Nwosu",
+    role: "Admin Officer, Starshine Schools Benin",
+    text: "The announcement system alone is worth it. We used to spend money on printed letters that half the parents never received. Now everyone gets notified instantly.",
+    color: "bg-green-500",
   },
 ];

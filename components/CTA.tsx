@@ -42,11 +42,11 @@ export default function CTA() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-            <button className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white hover:bg-orange-600">
+            <button onClick={() => window.location.href = "/#contact"}  className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white hover:bg-orange-600">
               Book Free Demo
             </button>
 
-            <button className="rounded-xl border border-white/20 px-8 py-4 text-white">
+            <button onClick={() => window.location.href = "/#contact"} className="rounded-xl border border-white/20 px-8 py-4 text-white hover:bg-white/10">
               Contact Sales
             </button>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardMockup from "./DashboardMockup";
 
 export default function Hero() {
@@ -69,11 +71,11 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <button className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white hover:bg-orange-600">
+          <button  onClick={() => window.location.href = "/#contact"} className="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white hover:bg-orange-600">
             Start Free Trial
           </button>
 
-          <button className="rounded-xl border border-white/20 bg-white/10 px-8 py-4 text-white backdrop-blur-md">
+          <button onClick={() => window.location.href = "/#features"}  className="rounded-xl border border-white/20 bg-white/10 px-8 py-4 text-white  hover:text-black backdrop-blur-md">
             Watch Demo
           </button>
         </div>

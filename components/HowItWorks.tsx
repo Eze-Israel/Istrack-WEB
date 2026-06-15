@@ -2,114 +2,102 @@
 
 import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  Clock3,
+  UserPlus,
+  Settings,
   BarChart3,
-  Smartphone,
-  Users,
-  Globe,
 } from "lucide-react";
 
-const benefits = [
+const steps = [
   {
-    icon: ShieldCheck,
-    title: "Secure & Reliable",
+    icon: UserPlus,
+    title: "Create Your School",
     description:
-      "Enterprise-grade security keeps school data safe and accessible.",
+      "Register your school and setup your institution profile in minutes.",
   },
 
   {
-    icon: Clock3,
-    title: "Save Time",
+    icon: Settings,
+    title: "Configure Operations",
     description:
-      "Automate attendance, reports, communication and administration.",
+      "Add classes, students, teachers and customize your workflow.",
   },
 
   {
     icon: BarChart3,
-    title: "Data Driven Decisions",
+    title: "Manage Efficiently",
     description:
-      "Gain insights into student performance and school operations.",
-  },
-
-  {
-    icon: Smartphone,
-    title: "Mobile Friendly",
-    description:
-      "Access your school dashboard from any device, anywhere.",
-  },
-
-  {
-    icon: Users,
-    title: "Parent Engagement",
-    description:
-      "Improve communication between school and parents.",
-  },
-
-  {
-    icon: Globe,
-    title: "Cloud Based",
-    description:
-      "No installation required. Access your data securely online.",
+      "Track attendance, results, fees and communication from one dashboard.",
   },
 ];
 
-export default function WhyIstrack() {
+export default function HowItWorks() {
   return (
-    <section className="bg-slate-50 py-28">
+    <section
+      id="how-it-works"
+      className="bg-white py-28"
+    >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
 
-          <div>
-            <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-600">
-              Why Choose ISTRACK
-            </span>
+        <div className="mx-auto max-w-3xl text-center">
+          <span
+            className="
+            rounded-full
+            bg-blue-100
+            px-4
+            py-2
+            text-sm
+            font-medium
+            text-blue-600
+            "
+          >
+            How It Works
+          </span>
 
-            <h2 className="mt-6 text-4xl font-black text-[#0A1F44] md:text-5xl">
-              Built Specifically For Modern Schools
-            </h2>
+          <h2
+            className="
+            mt-6
+            text-4xl
+            font-black
+            text-[#0A1F44]
+            md:text-5xl
+            "
+          >
+            Get Started In Three Simple Steps
+          </h2>
 
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              ISTRACK combines student management,
-              attendance tracking, communication,
-              finance management and reporting into
-              one seamless platform.
-            </p>
+          <p className="mt-6 text-lg text-slate-600">
+            Launch your digital school
+            management system faster than
+            ever before.
+          </p>
+        </div>
 
-            <div className="mt-10 space-y-5">
-              {[
-                "Easy Setup & Onboarding",
-                "Powerful Analytics Dashboard",
-                "24/7 Support",
-                "Automated School Operations",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3"
-                >
-                  <ShieldCheck
-                    size={22}
-                    className="text-orange-500"
-                  />
+        <div className="relative mt-20">
 
-                  <span className="font-medium text-slate-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <div
+            className="
+            absolute
+            left-1/2
+            top-12
+            hidden
+            h-1
+            w-[65%]
+            -translate-x-1/2
+            bg-orange-200
+            lg:block
+            "
+          />
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
+          <div className="grid gap-12 lg:grid-cols-3">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
 
               return (
                 <motion.div
-                  key={benefit.title}
+                  key={step.title}
                   initial={{
                     opacity: 0,
-                    y: 30,
+                    y: 40,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -119,29 +107,59 @@ export default function WhyIstrack() {
                     once: true,
                   }}
                   transition={{
-                    delay: index * 0.1,
+                    delay: index * 0.15,
                   }}
-                  whileHover={{
-                    y: -8,
-                  }}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="relative text-center"
                 >
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-orange-500">
-                    <Icon size={28} />
+                  <div
+                    className="
+                    mx-auto
+                    flex
+                    h-24
+                    w-24
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#0A1F44]
+                    text-white
+                    shadow-xl
+                    "
+                  >
+                    <Icon size={38} />
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-[#0A1F44]">
-                    {benefit.title}
+                  <div
+                    className="
+                    absolute
+                    top-0
+                    right-1/2
+                    flex
+                    h-10
+                    w-10
+                    translate-x-1/2
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-orange-500
+                    text-sm
+                    font-bold
+                    text-white
+                    "
+                  >
+                    {index + 1}
+                  </div>
+
+                  <h3 className="mt-8 text-2xl font-bold text-[#0A1F44]">
+                    {step.title}
                   </h3>
 
-                  <p className="text-slate-600">
-                    {benefit.description}
+                  <p className="mt-4 leading-7 text-slate-600">
+                    {step.description}
                   </p>
                 </motion.div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>

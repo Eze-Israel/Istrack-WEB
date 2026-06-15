@@ -1,39 +1,48 @@
-
 "use client";
 
-import { motion } from "framer-motion";
-import { testimonials } from "@/data/testimonials";
+import { testimonials } from "@/components/data/testimonials";
 
-import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   return (
-    <section className="bg-slate-50 py-28">
+    <section
+      className="bg-slate-50 py-28"
+      id="testimonials"
+    >
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="text-center">
-          <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-600">
-            Testimonials
-          </span>
+        {/* SECTION HEADER */}
 
-          <h2 className="mt-6 text-4xl font-black text-[#0A1F44] md:text-5xl">
+        <div className="text-center">
+
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[3px] text-orange-500">
+            Testimonials
+          </p>
+
+          <h2 className="text-4xl font-black text-[#0A1F44] md:text-5xl">
             What Schools Are Saying
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-            Trusted by administrators, teachers
-            and school owners across Nigeria.
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-500">
+            Trusted by administrators,
+            school owners and educators
+            across Nigeria.
           </p>
+
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        {/* GRID */}
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+
           {testimonials.map(
             (testimonial, index) => (
               <motion.div
                 key={testimonial.name}
                 initial={{
                   opacity: 0,
-                  y: 30,
+                  y: 20,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -46,60 +55,97 @@ export default function Testimonials() {
                   delay: index * 0.15,
                 }}
                 whileHover={{
-                  y: -8,
+                  boxShadow:
+                    "0 20px 40px rgba(15,23,42,0.08)",
                 }}
                 className="
-                rounded-3xl
+                rounded-[24px]
                 border
                 border-slate-200
                 bg-white
                 p-8
-                shadow-sm
+                transition-all
+                duration-300
                 "
               >
-                <Quote
-                  size={40}
-                  className="mb-6 text-orange-500"
-                />
+                {/* STARS */}
 
-                <p className="leading-8 text-slate-600">
-                  "{testimonial.quote}"
+                {/* <div className="mb-4 flex gap-1 text-orange-500">
+                  {Array.from({
+                    length: testimonial.stars,
+                  }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={14}
+                      fill="currentColor"
+                    />
+                  ))}
+                </div> */}
+                <div
+                  className="
+                  mb-4
+                  text-[14px]
+                  tracking-[2px]
+                  text-orange-500
+                  "
+                >
+                  ★★★★★
+                 </div>
+
+                {/* TEXT */}
+
+                <p
+                  className="
+                  mb-6
+                  text-[14px]
+                  italic
+                  leading-[1.8]
+                  text-slate-600
+                  "
+                >
+                  "{testimonial.text}"
                 </p>
 
-                <div className="mt-8 flex items-center gap-4">
+                {/* AUTHOR */}
+
+                <div className="flex items-center gap-3">
+
                   <div
-                    className="
+                    className={`
                     flex
-                    h-14
-                    w-14
+                    h-[42px]
+                    w-[42px]
+                    flex-shrink-0
                     items-center
                     justify-center
                     rounded-full
-                    bg-[#0A1F44]
+                    text-[14px]
                     font-bold
                     text-white
-                    "
+                    ${testimonial.color}
+                    `}
                   >
-                    {testimonial.name.charAt(0)}
+                    {testimonial.initials}
                   </div>
 
                   <div>
-                    <h4 className="font-bold text-[#0A1F44]">
+
+                    <h4 className="text-[14px] font-bold text-[#0A1F44]">
                       {testimonial.name}
                     </h4>
 
-                    <p className="text-sm text-slate-500">
+                    <p className="text-[12px] text-slate-400">
                       {testimonial.role}
                     </p>
 
-                    <p className="text-sm text-orange-500">
-                      {testimonial.school}
-                    </p>
                   </div>
+
                 </div>
+
               </motion.div>
             )
           )}
+
         </div>
 
       </div>

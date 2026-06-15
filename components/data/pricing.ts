@@ -1,7 +1,7 @@
 export const pricingPlans = [
   {
     name: "Starter",
-    price: "₦205,000",
+    price: "₦399,000",
     period: "/term",
     description:
       "Perfect for small schools getting started.",
@@ -17,7 +17,7 @@ export const pricingPlans = [
 
   {
     name: "Professional",
-    price: "₦750,000",
+    price: "₦550,000",
     period: "/term",
     description:
       "Best for growing schools and colleges.",

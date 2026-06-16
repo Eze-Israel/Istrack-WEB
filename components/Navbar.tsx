@@ -85,18 +85,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -20,
-            }}
+            initial={{opacity: 0, y: -20,}} animate={{opacity: 1, y: 0,}}exit={{opacity: 0,y: -20,}}
             className="border-t border-white/10 bg-[#0A1F44]"
           >
             <div className="flex flex-col gap-4 p-6">
@@ -105,11 +94,13 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className="text-white"
+                  onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
